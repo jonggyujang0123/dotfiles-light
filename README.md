@@ -1,5 +1,8 @@
 # dotfiles that work without sudo
 
+This repo is forked from Kiyoon's original repo 'dotfiles', please see his instructions.
+Since this is a lighter version, some functionalities are missing. 
+
 This is a modern Neovim, Tmux, Zsh configuration that supports installing everything locally (i.e. non-system-wide user install, not using sudo).  
 You can enjoy working on a remote SSH server without root permission, just like you do locally.
 
@@ -24,8 +27,6 @@ Also, it has many versions of vim configurations.
 - Use `vscode_init.lua` for VSCode-Neovim.
 
 ## Features
-
-### Zsh
 
 - Feature-rich prompt powered by [Starship](https://starship.rs)
 - Autocomplete, autosuggest
@@ -52,22 +53,31 @@ Also, it has many versions of vim configurations.
 - Linux x86-64, Windows WSL2 (Mac support planned. You just need dependency install script to use `brew`)
 - Neovim v0.9.0 (or at least v0.8.0)
 - Tmux v3.3a-ish
-- Zsh v5.9 (in v5.8 highlighting will look weird and fzf-tab will remove some lines)
 
 ## Steps
 
-1. Install dotfiles
+1. Install zsh & oh-my-zsh
+
+Please deactivate conda
 
 ```bash
 cd ~/.config	# it doesn't have to be here. Just install anywhere
-git clone https://github.com/kiyoon/dotfiles
-
-# WARNING: ./symlink.sh will override existing dotfiles without validation (but will create a backup).
-# The old dotfiles will be moved with '~' suffix.
+git clone https://github.com/jgjang/dotfiles-light
+bash dotfiles-light/install-zsh-locally.sh
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 # Use with care if you configured something manually.
-cd dotfiles
-./symlink.sh
+#cd dotfiles
+#./symlink.sh
 ```
+
+2. Install powerlevel10k
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+
+
+
 
 2. Install zsh, oh-my-zsh
 
