@@ -24,3 +24,7 @@ git pull #
 git tag -a v0.1 -m <message>
 git push -tags
 ```
+# Remove Commit History
+
+git reset --soft {해시 값}
+git push -f
