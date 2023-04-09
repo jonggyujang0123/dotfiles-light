@@ -146,7 +146,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
+if [ -f "$HOME/bin/logo-ls" ]; then
+    alias ls="logo-ls"
+fi
 
 export TERM="xterm-256color"
-alias ls="logo-ls"
+
+
+
+if [ -f "$HOME/vim/src/vim" ]; then
+    vim="$HOME/vim/src/vim"
+fi
