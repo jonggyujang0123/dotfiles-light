@@ -3,6 +3,9 @@
 This repo is forked from Kiyoon's original repo 'dotfiles', please see his instructions.
 Since this is a lighter version, some functionalities are missing. 
 
+<img width="1260" alt="스크린샷 2023-04-10 오전 4 41 16" src="https://user-images.githubusercontent.com/88477912/230793228-586417bb-959e-4fe4-8f92-621394bca44b.png">
+
+
 ## Features 
 
 - **(For me/beginner)Ubuntu Install Guide** : [ubuntu_start/README.md](https://github.com/jonggyujang0123/dotfiles-light/blob/master/ubuntu_start/README.md)
