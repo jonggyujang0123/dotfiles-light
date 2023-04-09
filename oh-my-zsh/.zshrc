@@ -155,5 +155,5 @@ export TERM="xterm-256color"
 
 
 if [ -f "$HOME/vim/src/vim" ]; then
-    vim="$HOME/vim/src/vim"
+    alias vim="$HOME/vim/src/vim"
 fi
