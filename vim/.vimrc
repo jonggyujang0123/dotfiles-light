@@ -34,12 +34,6 @@ set splitright
 " show relative line numbers only when in normal mode
 set number
 
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-augroup END
-
 " highlight search
 set hlsearch
 
@@ -113,7 +107,7 @@ nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 
 
 " highlight cursor line
-"set cursorline
+set cursorline
 
 " set each buffer store up to 1000 lines(<1000), maximum buffer size
 " 1000kb(s1000)
@@ -434,3 +428,75 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 map <C-Down> <cmd>cn<CR>
 map <C-Up> <cmd>cp<CR>
 
+
+func! CmtOn()    "주석 on
+	exe "'<,'>norm i#"
+endfunc
+vmap <c-c> <esc>:call CmtOn() <cr>
+nmap <c-c> <esc>v:call CmtOn() <cr>
+
+
+set term=xterm-256color
+set background=dark
+
+
+
+"""""""""""""""""""""""""""""""
+"""           VIM PLUGIN
+"""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+
+
+" Any valid git URL is allowed
+"NERD-Tree
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+map <F3> :NERDTreeToggle<cr>
+
+" Initialize plugin system
+"
+
+
+
+"
+Plug 'sillybun/vim-repl'
+
+let g:repl_program = {
+            \   'python': 'ipython',
+            \   'python-debug': 'ipdb3',
+            \   'vim': 'vim -e',
+            \   }
+let g:repl_predefine_python = {
+            \   'numpy': 'import numpy as np',
+            \   }
+let g:repl_cursor_down = 1
+let g:repl_python_automerge = 1
+let g:repl_ipython_version = '7'
+let g:repl_output_copy_to_register = "t"
+nnoremap <leader>r :REPLToggle<Cr>
+nnoremap <leader>e :REPLSendSession<Cr>
+autocmd Filetype python nnoremap <F12> <Esc>:REPLDebugStopAtCurrentLine<Cr>
+autocmd Filetype python nnoremap <F9> <Esc>:REPLPDBN<Cr>
+autocmd Filetype python nnoremap <F10> <Esc>:REPLPDBS<Cr>
+let g:repl_position = 3
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:python3_host_prog = '~/anaconda3/bin/python3'
+let g:coc_global_extensions = ['coc-python', 'coc-explorer', 'coc-json', 'coc-tsserver', 'coc-import-cost', 'coc-eslint', 'coc-snippets', 'coc-html', 'coc-css', 'coc-emmet', 'coc-pyright', 'coc-phpls', 'coc-angular', 'coc-git']
+highlight Pmenu           ctermfg=Gray        guifg=#FFFFFF     ctermbg=DarkGray    guibg=#0F0F0F
+highlight PmenuSel        ctermfg=White       guifg=#0F0F0F     ctermbg=Gray        guibg=#F0F0F0
+highlight PmenuSbar       ctermfg=NONE        guifg=NONE        ctermbg=DarkGray    guibg=#777777
+highlight PmenuThumb      ctermfg=Gray        guifg=#F0F0F0     ctermbg=NONE        guibg=NONE
+
+Plug 'Yggdroot/indentLine'
+
+"inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
+"inoremap <silent><expr> <Enter> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<Enter>"
+"inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
+
+call plug#end()

@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+ source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+ fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -82,15 +82,14 @@ ZVM_INIT_MODE=sourcing
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+	zsh-autosuggestions
 )
-
-export EDITOR='nvim'
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 #source ./fzf-tab/fzf-tab.plugin.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -119,5 +118,35 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source ~/.bash_profile
+#alias vi="~/.local/bin/nvim"
+alias vi="vim"
 
+alias tmuxkill='f(){ tmux kill-session -t "$1"; unset -f f; }; f'
+alias tmuxkill='f(){ tmux kill-session -t "$1"; unset -f f; }; f'
+alias tmuxnew='f(){ tmux new -s "$1"; unset -f f; }; f'
+alias tmuxattach='f(){ tmux attach -t "$1"; unset -f f; }; f'
+alias cda='conda deactivate'
+alias ca='f(){ conda activate $1; unset -f f; }; f'
+alias jc='f(){ docker exec -it "$1" /bin/bash; unset -f f; }; f'
+
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$("$HOME/anaconda3/bin/conda"'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+export TERM="xterm-256color"
+alias ls="logo-ls"

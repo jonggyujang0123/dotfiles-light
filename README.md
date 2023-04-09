@@ -1,135 +1,83 @@
-# dotfiles that work without sudo
+# dotfiles
 
 This repo is forked from Kiyoon's original repo 'dotfiles', please see his instructions.
 Since this is a lighter version, some functionalities are missing. 
 
-This is a modern Neovim, Tmux, Zsh configuration that supports installing everything locally (i.e. non-system-wide user install, not using sudo).  
-You can enjoy working on a remote SSH server without root permission, just like you do locally.
+## Features 
 
-![image](https://user-images.githubusercontent.com/12980409/218476082-8c400daf-7d9d-4d15-bf7a-f6b41d9191d9.png)
-
-![image](https://user-images.githubusercontent.com/12980409/218475937-c9a51b2d-b4d6-499f-8787-012770410209.png)
-
-![image](https://user-images.githubusercontent.com/12980409/218476252-9de93e0c-ddfe-486b-979a-5ded6a9425a9.png)
-
-## Keep it stable!
-
-This repository includes a GitHub Actions that automatically checks if the commit hasn't been made for 1 week.  
-If it has not been updated for 1 week, we consider that commit to be 'stable' and automatically bump version with `stable` tag.  
-In order to try the stable version, just run `dotstable` after setting up the zsh. This will also pull neovim plugin versions that have been used for the stable commit.
-
-Also, it has many versions of vim configurations.
-
-- `vi` to run a fully-featured bleeding-edge configuration of neovim.
-- `vic` to run neovim with stable and mild configuration using CoC. It's a balance between the two, and should be used when the first option is broken.
-- `lazyvim` to run pre-configured [LazyVim](https://github.com/LazyVim/LazyVim).
-- `\vi` to run original vim with no plugins (only simple `.vimrc`)
-- Use `vscode_init.lua` for VSCode-Neovim.
-
-## Features
-
-- Feature-rich prompt powered by [Starship](https://starship.rs)
-- Autocomplete, autosuggest
-- Syntax highlighting
-- Vim mode
-- Fuzzy searching with [fzf](https://github.com/junegunn/fzf)
-  - Try `Ctrl+t` to find file, `Alt+c` to change directory, `Ctrl+r` to reverse search commands.
-- Smart change directory with [Zoxide](https://github.com/ajeetdsouza/zoxide)
-  - Try `z <partial dirname..>` like `z dot` will go to the `~/.config/dotfiles`.
-
-### Neovim
-
-- Yank registers synchronised with tmux. Yank from neovim and paste on tmux. Copy from tmux and paste on neovim.
-- See more in [nvim/README.md](nvim/README.md)
-
-### Tmux
-
-- Mouse-enabled interactive tree view with [Treemux](https://github.com/kiyoon/treemux)
-- Status bar that shows battery, CPU, GPU, RAM, weather, and git with [tmux-dracula fork](https://github.com/kiyoon/tmux-dracula)
-- See more in [tmux/README.md](tmux/README.md)
+- **(For me/beginner)Ubuntu Install Guide** : [ubuntu_start/README.md](https://github.com/jonggyujang0123/dotfiles-light/blob/master/ubuntu_start/README.md)
+- **(For me/beginner)Git setting guide**
+- **Vim**
+- **Tmux**
+- **zsh**
 
 ## Requirements
 
-- Linux x86-64, Windows WSL2 (Mac support planned. You just need dependency install script to use `brew`)
-- Neovim v0.9.0 (or at least v0.8.0)
+- Linux x86-64
 - Tmux v3.3a-ish
 
 ## Steps
 
-1. Install zsh & oh-my-zsh
+1. Install zsh 
 
-Please deactivate conda
+- Please deactivate conda
+- (caution) Your dot files will be overrided!!!. Kiyoon's original repo provides backup code, but not here
 
 ```bash
-cd ~/.config	# it doesn't have to be here. Just install anywhere
-git clone https://github.com/jgjang/dotfiles-light
+git clone https://github.com/jonggyujang0123/dotfiles-light
+bash dotfiles-light/symlink.sh
 bash dotfiles-light/install-zsh-locally.sh
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 # Use with care if you configured something manually.
 #cd dotfiles
-#./symlink.sh
 ```
 
-2. Install powerlevel10k
+2. Install oh-my-zsh & powerlevel10k & other 
+- reload terminal
 ```bash
+bash dotfiles-light/symlink.sh
+source .zshrc
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+bash dotfiles-light/symlink.sh
+source .zshrc
 ```
 
-
-
-
-
-2. Install zsh, oh-my-zsh
+- install `logo-ls`
 
 ```bash
-oh-my-zsh/zsh-local-install.sh
-oh-my-zsh/apps-local-install.sh
-oh-my-zsh/launch-zsh-in-bash.sh
-git submodule update --init --remote  # Install and update all zsh plugins
+wget -q https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_Linux_x86_64.tar.gz
+tar -xzf logo-ls_Linux_x86_64.tar.gz
+cd logo-ls_Linux_x86_64 
+cp logo-ls ~/bin
 ```
 
-Open your terminal again and you'll see you're running zsh.
-
-See [oh-my-zsh/README.md](oh-my-zsh/README.md) for details.
-
-3. Install neovim and tmux
-
-You need Neovim v0.9.0. The fold column will look ugly in v0.8.x.
-
-On Linux, you can install locally using:
-
+3. Install conda
 ```bash
-./install-nvim-tmux-locally-linux.sh
+bash dotfiles-light/CondaConfig/install-anaconda.sh
 ```
 
-This will download the latest appimage for each and extract at `~/.local/bin`.
-
-Install neovim dependencies:
-
+4. Install vimplugin
 ```bash
-nvim/install-linux.sh
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+python -m pip install ipdb
 ```
 
-Install tmux plugins:
-
+- Install Copilot :
+  - After this: Start Neovim and invoke `:Copilot setup`
 ```bash
-tmux/install-plugins.sh
+git clone https://github.com/github/copilot.vim.git \
+  ~/.vim/pack/github/start/copilot.vim
 ```
 
-4. Install others
+- Enter vim and :PlugInstall
+
+5. Install tmuxplugins
 
 ```bash
-# You might want to symlink dotfiles again in case some scripts overrode them
-./symlink.sh
-# You only need to install it to the local computer, not in SSH host computer.
+dotfiles-light/tmux/install-plugins.sh
+```
+6. (only for local computer)
+Install others
 ./install-nerdfont.sh
-```
 
-5. Install / Update dotfiles, apps, plugins etc.
-
-```zsh
-# WARNING: This includes calling ./symlink.sh so the dotfile symlinks will be updated.
-dotupdate			# Use if you want to update to the latest commit
-dotstable			# Use if you want to use the stable tag
-dotupdate <tag>		# Specify the tag/commit you want to use
-```
