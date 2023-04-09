@@ -75,7 +75,7 @@ ln -s ~/bin/node-v16.20.0-linux-x64/bin/* ~/bin
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 python -m pip install ipdb
 ```
-
+- If jedi error `pip install jedi==0.16.0`
 - Install Copilot :
   - Install vim latest version (optional)
 ```bash
