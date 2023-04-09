@@ -77,11 +77,16 @@ python -m pip install ipdb
 ```
 
 - Install Copilot :
-  - After this: Start Neovim and invoke `:Copilot setup`
+  - Install vim latest version (optional)
+```bash
+bash dotfiles/vim/install-vim-...sh
+```
+  - copilot install
 ```bash
 git clone https://github.com/github/copilot.vim.git \
   ~/.vim/pack/github/start/copilot.vim
 ```
+  - After this: Start Neovim and invoke `:Copilot setup`
 
 - Enter vim and :PlugInstall
 
