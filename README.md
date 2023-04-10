@@ -30,9 +30,46 @@ Since this is a lighter version, some functionalities are missing.
 
 ## Steps
 
+### 1. Install vimplugin
+
+- Install the latest version of vim (locally)
+```bash
+bash vimconfig/install-vim-latest-locally.sh
+```
+
+- install nodejs 
+
+```bash
+bash install-node-js-locally.sh
+```
+
+- install vim plugin
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+python -m pip install ipdb
+```
+- Enter `vim` and run :PlugInstall
+
+> If jedi error: `pip install jedi==0.16.0`
+
+- Install Copilot :
+  - Install vim latest version (optional)
+
+  - copilot install
+```bash
+git clone https://github.com/github/copilot.vim.git \
+  ~/.vim/pack/github/start/copilot.vim
+```
+  - After this: Start Neovim and invoke `:Copilot setup`
+
+- Enter vim and :PlugInstall
+
+
 ### 1. Install zsh 
 
 > :warning: **symlink.sh will override your dotfiles (backup path: `$HOME/.backup_dot` !!**
+
 > :warning: **Please deactivate conda**
 
 ```bash
@@ -68,41 +105,6 @@ source ~/.zshrc
 bash CondaConfig/install-anaconda.sh
 source ~/.zshrc
 ```
-
-### 5. Install vimplugin
-
-- Install the latest version of vim (locally)
-```bash
-bash vim/install-vim-latest-locally.sh
-source ~/.zshrc
-```
-
-- install nodejs 
-
-```bash
-bash install-node-js-locally.sh
-```
-
-- install vim plugin
-
-```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-python -m pip install ipdb
-```
-- If jedi error `pip install jedi==0.16.0`
-- Install Copilot :
-  - Install vim latest version (optional)
-```bash
-bash dotfiles/vim/install-vim-...sh
-```
-  - copilot install
-```bash
-git clone https://github.com/github/copilot.vim.git \
-  ~/.vim/pack/github/start/copilot.vim
-```
-  - After this: Start Neovim and invoke `:Copilot setup`
-
-- Enter vim and :PlugInstall
 
 5. Install tmuxplugins
 
