@@ -32,10 +32,9 @@ Since this is a lighter version, some functionalities are missing.
 
 1. Install zsh 
 
-> :warning: **symlink.sh will override your dotfiles !!**
-> :warning: **Please deactivate conda**
+> :warning: **symlink.sh will override your dotfiles (backup path: `$HOME/.backup_dot` !!**
 
-- (caution) Your dot files will be overrided!!!. Kiyoon's original repo provides backup code, but not here
+> :warning: **Please deactivate conda**
 
 ```bash
 git clone https://github.com/jonggyujang0123/dotfiles-light
