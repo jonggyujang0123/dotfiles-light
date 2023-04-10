@@ -10,7 +10,7 @@ ln_sb() {
     basename="$(basename "file_path")"
     dest_file= "$dest_dir/$basename"
     
-    if [[-f "$destfile"]]; then
+    if [[-f "$dest_file"]]; then
         mv "dest_file" ~/.backup_dot/
         ln -sf $file_path$ 
     fi
