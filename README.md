@@ -44,42 +44,43 @@ bash symlink.sh
 bash install-zsh-locally.sh
 ```
 
-2. Install oh-my-zsh & powerlevel10k & other 
-- reload terminal
+### 2. Install oh-my-zsh & powerlevel10k & other 
+
+> :star: reload terminal before this step
+
 ```bash
-bash dotfiles-light/symlink.sh
-source .zshrc
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-bash dotfiles-light/symlink.sh
-source .zshrc
+bash symlink.sh
+source ~/.zshrc
 ```
 
-- install `logo-ls`
+### 3. - install `logo-ls`
 
 ```bash
-wget -q https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_Linux_x86_64.tar.gz
-tar -xzf logo-ls_Linux_x86_64.tar.gz
-cd logo-ls_Linux_x86_64 
-cp logo-ls ~/bin
+bash install-logo-ls-locally.sh
+source ~/.zshrc
 ```
 
-3. Install conda
+### 4. Install conda
 ```bash
-bash dotfiles-light/CondaConfig/install-anaconda.sh
+bash CondaConfig/install-anaconda.sh
+source ~/.zshrc
 ```
 
-4. Install vimplugin
+### 5. Install vimplugin
+
+- Install the latest version of vim (locally)
+```bash
+bash vim/install-vim-latest-locally.sh
+source ~/.zshrc
+```
 
 - install nodejs 
 
 ```bash
-wget https://nodejs.org/download/release/v16.20.0/node-v16.20.0-linux-x64.tar.xz
-xz -d node-v16.20.0-linux-x64.tar.xz
-tar xvf node-v16.20.0-linux-x64.tar
-mv node-v16.20.0-linux-x64 ~/bin/
-ln -s ~/bin/node-v16.20.0-linux-x64/bin/* ~/bin
+bash install-node-js-locally.sh
 ```
 
 - install vim plugin
