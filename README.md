@@ -81,6 +81,7 @@ bash install-node-js-locally.sh
 - install vim plugin
 
 ```bash
+mkdir -p ~/.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 python -m pip install ipdb
 ```
