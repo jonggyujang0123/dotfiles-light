@@ -89,6 +89,8 @@ python -m pip install ipdb # (If possible)
 
 > If jedi error: `pip install jedi==0.16.0`
 
+- If you use your compiler in other locations: replace `let g:python3_host_prog = '~/anaconda3/bin/python3'` in vimrc by your python ex) `let g:python3_host_prog = "user/bin/python"`
+
 
 ### 3. - install `logo-ls`
 
