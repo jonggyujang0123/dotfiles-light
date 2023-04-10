@@ -3,6 +3,8 @@
 This repo is forked from Kiyoon's original repo 'dotfiles', please see his instructions.
 Since this is a lighter version, some functionalities are missing. 
 
+
+
 <img width="1260" alt="스크린샷 2023-04-10 오전 4 41 16" src="https://user-images.githubusercontent.com/88477912/230793228-586417bb-959e-4fe4-8f92-621394bca44b.png">
 
 
@@ -23,7 +25,9 @@ Since this is a lighter version, some functionalities are missing.
 
 1. Install zsh 
 
-- Please deactivate conda
+> :warning: **symlink.sh will override your dotfiles !!**
+> :warning: **Please deactivate conda**
+
 - (caution) Your dot files will be overrided!!!. Kiyoon's original repo provides backup code, but not here
 
 ```bash
