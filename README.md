@@ -10,11 +10,18 @@ Since this is a lighter version, some functionalities are missing.
 
 ## Features 
 
-- **(For me/beginner)Ubuntu Install Guide** : [ubuntu_start/README.md](https://github.com/jonggyujang0123/dotfiles-light/blob/master/ubuntu_start/README.md)
-- **(For me/beginner)Git setting guide**
-- **Vim**
+- **(For me/beginner)Read ubuntu Install Guide** : [ubuntu_start/README.md](https://github.com/jonggyujang0123/dotfiles-light/blob/master/ubuntu_start/README.md)
+- **(For me/beginner)Read Git setting guide**
+- **Vim Plugin**
+  - [vim-repl](https://github.com/sillybun/vim-repl)
+  - [vim-nerdtree](https://github.com/preservim/nerdtree)
+  - [vim-coc.nvim](https://github.com/neoclide/coc.nvim)
+  - [vim-copilot](https://github.com/github/copilot.vim)
+  - other useful plugins
 - **Tmux**
+  - theme (for beauty)
 - **zsh**
+  - theme (for beauty)
 
 ## Requirements
 
