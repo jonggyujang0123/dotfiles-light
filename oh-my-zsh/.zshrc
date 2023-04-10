@@ -72,7 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM='$HOME/.config/oh-my-zsh/custom'
+ZSH_CUSTOM="$HOME/.config/oh-my-zsh/custom"
 
 ZVM_INIT_MODE=sourcing
 
@@ -86,7 +86,7 @@ plugins=(
 	zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 #source ./fzf-tab/fzf-tab.plugin.zsh
