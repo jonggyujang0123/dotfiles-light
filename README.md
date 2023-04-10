@@ -30,29 +30,6 @@ Since this is a lighter version, some functionalities are missing.
 
 ## Steps
 
-### 1. Install vimplugin
-
-- Install the latest version of vim (locally)
-```bash
-bash vimconfig/install-vim-latest-locally.sh
-```
-
-- install nodejs 
-
-```bash
-bash install-node-js-locally.sh
-```
-
-- install vim plugin
-
-```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-python -m pip install ipdb
-```
-- Enter `vim` and run :PlugInstall
-
-> If jedi error: `pip install jedi==0.16.0`
-
 
 ### 1. Install zsh 
 
@@ -71,15 +48,43 @@ bash install-zsh-locally.sh
 
 ### 2. Install oh-my-zsh & powerlevel10k & other 
 
-> :star: reload terminal before this step
+> :star: reload terminal before this step & return to ~/.config/dotfiles-light/
 
 ```bash
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 bash symlink.sh
 source ~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+source ~/.zshrc
 ```
+
+### 3. vim 
+
+
+- Install the latest version of vim (locally)
+```bash
+bash vimconfig/install-vim-latest-locally.sh
+```
+
+> check vim version (9.xx)
+
+- install nodejs 
+
+```bash
+bash install-node-js-locally.sh
+```
+
+- install vim plugin
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+python -m pip install ipdb
+```
+- Enter `vim` and run :PlugInstall
+
+> If jedi error: `pip install jedi==0.16.0`
+
 
 ### 3. - install `logo-ls`
 
@@ -94,16 +99,18 @@ bash CondaConfig/install-anaconda.sh
 source ~/.zshrc
 ```
 
-5. Install tmuxplugins
+
+### 5. Install tmuxplugins
 
 ```bash
-dotfiles-light/tmux/install-plugins.sh
+bash tmux/install-plugins.sh
+tmux 
 ```
-6. (only for local computer)
-Install others
-./install-nerdfont.sh
 
-### Install Copilot
+
+
+
+### 6. Install Copilot
 
 - Install Copilot :
   - Install vim latest version (optional)
@@ -114,3 +121,32 @@ git clone https://github.com/github/copilot.vim.git \
   ~/.vim/pack/github/start/copilot.vim
 ```
   - After this: Start Neovim and invoke `:Copilot setup`
+
+### (option, only for local computer) Install nerdfont
+Install others
+./install-nerdfont.sh
+
+
+## How to use?
+
+### 1. vim plugins
+
+- Nerdtree : Press `<F3>` to open/close tree window 
+- vim-repl : Press `\` + `R`
+- Copilot : Press `<Tab>` to accept suggestion
+
+### 2. tmux plugins 
+- `<ctrl>` + `a` : `function key`
+- `function key` + `c` : create new window
+- `function key` + `n` : go to next window
+- `function key` + `p` : go to previous window
+- `function key` + `d` : detach
+- `function key` + `number` : go to n-th window 
+- `function key` + `R` : Reload tmux plugins
+
+- `tmuxattach x` : attach session 'x' 
+- `tmuxkill x` : kill session 'x'
+
+
+
+
