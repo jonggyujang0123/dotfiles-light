@@ -11,7 +11,7 @@ ln_sb() {
     dest_file= "$dest_dir/$basename"
     
     if [[ -f "$dest_file" ]]; then
-        mv "dest_file" ~/.backup_dot/
+        mv "$dest_file" ~/.backup_dot/
         ln -sf $file_path$ 
     fi
     
