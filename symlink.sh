@@ -15,7 +15,7 @@ ln_sb() {
         ln -sf "$file_path"
     fi
     
-    ln -sf "$CURRENT_DIR/$file_path" "dest_dir"
+    ln -sf "$CURRENT_DIR/$file_path" "$dest_dir"
 }
     
 
