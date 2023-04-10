@@ -44,7 +44,6 @@ mkdir -p .config
 cd .config
 git clone https://github.com/jonggyujang0123/dotfiles-light
 cd dotfiles-light
-bash symlink.sh
 bash install-zsh-locally.sh
 ```
 
