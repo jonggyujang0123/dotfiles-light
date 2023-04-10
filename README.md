@@ -37,11 +37,11 @@ Since this is a lighter version, some functionalities are missing.
 > :warning: **Please deactivate conda**
 
 ```bash
+cd .config
 git clone https://github.com/jonggyujang0123/dotfiles-light
-bash dotfiles-light/symlink.sh
-bash dotfiles-light/install-zsh-locally.sh
-# Use with care if you configured something manually.
-#cd dotfiles
+cd dotfiles-light
+bash symlink.sh
+bash install-zsh-locally.sh
 ```
 
 2. Install oh-my-zsh & powerlevel10k & other 
