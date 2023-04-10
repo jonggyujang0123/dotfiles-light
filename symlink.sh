@@ -7,7 +7,7 @@ mkdir -p ~/.backup_dot
 ln_sb() {
     file_path='$1'
     dest_dir='$2'
-    basename="$(basename "file_path")"
+    basename="$(basename "$file_path")"
     dest_file= "$dest_dir/$basename"
     
     if [[ -f "$dest_file" ]]; then
