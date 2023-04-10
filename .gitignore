@@ -2,3 +2,4 @@ zsh/*
 jupyter/*
 ssh/*
 nvim/*
+$HOME

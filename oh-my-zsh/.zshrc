@@ -8,6 +8,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -119,7 +120,6 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #alias vi="~/.local/bin/nvim"
-alias vi="vim"
 
 alias tmuxkill='f(){ tmux kill-session -t "$1"; unset -f f; }; f'
 alias tmuxkill='f(){ tmux kill-session -t "$1"; unset -f f; }; f'
@@ -154,6 +154,7 @@ export TERM="xterm-256color"
 
 
 
-if [ -f "$HOME/vim/src/vim" ]; then
-    alias vim="$HOME/vim/src/vim"
+if [ -f "$HOME/bin/vim" ]; then
+    alias vim="$HOME/bin/vim"
+    alias vi="$HOME/bin/vim"
 fi

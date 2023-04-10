@@ -17,3 +17,4 @@ cd vim
 ./configure --prefix=$HOME
 make
 make install
+cd .. && rm -rf vim 
