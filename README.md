@@ -53,18 +53,6 @@ python -m pip install ipdb
 
 > If jedi error: `pip install jedi==0.16.0`
 
-- Install Copilot :
-  - Install vim latest version (optional)
-
-  - copilot install
-```bash
-git clone https://github.com/github/copilot.vim.git \
-  ~/.vim/pack/github/start/copilot.vim
-```
-  - After this: Start Neovim and invoke `:Copilot setup`
-
-- Enter vim and :PlugInstall
-
 
 ### 1. Install zsh 
 
@@ -115,3 +103,14 @@ dotfiles-light/tmux/install-plugins.sh
 Install others
 ./install-nerdfont.sh
 
+### Install Copilot
+
+- Install Copilot :
+  - Install vim latest version (optional)
+
+  - copilot install
+```bash
+git clone https://github.com/github/copilot.vim.git \
+  ~/.vim/pack/github/start/copilot.vim
+```
+  - After this: Start Neovim and invoke `:Copilot setup`
