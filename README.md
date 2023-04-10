@@ -10,7 +10,7 @@ Since this is a lighter version, some functionalities are missing.
 
 ## Features 
 
-- **(For me/beginner)Read ubuntu Install Guide** : [ubuntu_start/README.md](https://github.com/jonggyujang0123/dotfiles-light/blob/master/ubuntu_start/README.md)
+- **(For me/beginner)Read ubuntu Install Guide** : [99-Ubuntu-Start/README.md](https://github.com/jonggyujang0123/dotfiles-light/tree/master/99-Ubuntu-Start)
 - **(For me/beginner)Read Git setting guide**: [99-Git-Guide/README.md](https://github.com/jonggyujang0123/dotfiles-light/blob/master/99-Git-Guide/README.md)
 - **Vim Plugin**
   - [vim-repl](https://github.com/sillybun/vim-repl)
