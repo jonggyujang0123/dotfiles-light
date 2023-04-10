@@ -14,7 +14,7 @@ ln_sb() {
         mv "$dest_file" ~/.backup_dot/
     fi
     
-    ln -sf "$CURRENT_DIR/$file_path" "$dest_dir"
+    ln -sf "$CURRENT_DIR/$file_path" "$dest_file"
 }
     
 
