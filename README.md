@@ -33,7 +33,6 @@ Since this is a lighter version, some functionalities are missing.
 ### 1. Install zsh 
 
 > :warning: **symlink.sh will override your dotfiles (backup path: `$HOME/.backup_dot` !!**
-
 > :warning: **Please deactivate conda**
 
 ```bash
