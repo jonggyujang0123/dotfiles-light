@@ -37,6 +37,7 @@ Since this is a lighter version, some functionalities are missing.
 > :warning: **Please deactivate conda**
 
 ```bash
+mkdir -p .config
 cd .config
 git clone https://github.com/jonggyujang0123/dotfiles-light
 cd dotfiles-light
