@@ -30,7 +30,7 @@ Since this is a lighter version, some functionalities are missing.
 
 ## Steps
 
-1. Install zsh 
+### 1. Install zsh 
 
 > :warning: **symlink.sh will override your dotfiles (backup path: `$HOME/.backup_dot` !!**
 
