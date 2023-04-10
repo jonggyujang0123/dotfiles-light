@@ -48,9 +48,10 @@ bash install-zsh-locally.sh
 
 ### 2. Install oh-my-zsh & powerlevel10k & other 
 
-> :star: reload terminal before this step & return to ~/.config/dotfiles-light/
+> :star: reload terminal before this step
 
 ```bash
+cd ~/.config/dotfiles-light
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 bash symlink.sh
 source ~/.zshrc
