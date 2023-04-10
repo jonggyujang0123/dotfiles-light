@@ -23,6 +23,8 @@ Since this is a lighter version, some functionalities are missing.
 - **zsh**
   - theme (for beauty)
 
+> if you using other compilers 
+
 ## Requirements
 
 - Linux x86-64
