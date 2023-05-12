@@ -429,13 +429,6 @@ map <C-Down> <cmd>cn<CR>
 map <C-Up> <cmd>cp<CR>
 
 
-func! CmtOn()    "주석 on
-	exe "'<,'>norm i#"
-endfunc
-vmap <c-c> <esc>:call CmtOn() <cr>
-nmap <c-c> <esc>v:call CmtOn() <cr>
-
-
 set term=xterm-256color
 set background=dark
 
@@ -502,8 +495,27 @@ inoremap <expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
 "inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
 
 
-
-
+" NERD Commenter
+Plug 'preservim/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '#','right': '' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" customize keymapping
+vmap <c-c> <plug>NERDCommenterToggle <cr>
+nmap <c-c> <plug>NERDCommenterToggle <cr>
+vmap <c-x> <plug>NERDCommenterUncomment <cr>
+nmap <c-x> <plug>NERDCommenterUncomment <cr>
 
 
 call plug#end()
