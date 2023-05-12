@@ -441,6 +441,8 @@ set background=dark
 
 
 
+
+
 """""""""""""""""""""""""""""""
 """           VIM PLUGIN
 """""""""""""""""""""""""""""""
@@ -491,7 +493,7 @@ highlight Pmenu           ctermfg=Gray        guifg=#FFFFFF     ctermbg=DarkGray
 highlight PmenuSel        ctermfg=White       guifg=#0F0F0F     ctermbg=Gray        guibg=#F0F0F0
 highlight PmenuSbar       ctermfg=NONE        guifg=NONE        ctermbg=DarkGray    guibg=#777777
 highlight PmenuThumb      ctermfg=Gray        guifg=#F0F0F0     ctermbg=NONE        guibg=NONE
-
+highlight CoCUnusedHighlight ctermfg=Gray guifg=#777777 ctermbg=NONE guibg=NONE
 Plug 'Yggdroot/indentLine'
 
 "inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
@@ -499,4 +501,13 @@ inoremap <expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
 "inoremap <silent><expr> <Enter> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<Enter>"
 "inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
 
+
+
+
+
+
 call plug#end()
+
+
+
+
