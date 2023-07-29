@@ -69,6 +69,12 @@ command! -bang -range=% -complete=file -nargs=* WQ <line1>,<line2>write<bang> <a
 command! -bang Q quit<bang>
 nmap q: :q
 
+"Home and End Keys
+
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+nnoremap <C-a> <Home>
+nnoremap <C-e> <End>
 
 """""""""""""""""
 " <leader>l to toggle location list
@@ -519,7 +525,5 @@ nmap <c-x> <plug>NERDCommenterUncomment <cr>
 
 
 call plug#end()
-
-
 
 
