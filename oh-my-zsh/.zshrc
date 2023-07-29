@@ -150,7 +150,7 @@ if [ -f "$HOME/bin/logo-ls" ]; then
     alias ls="logo-ls"
 fi
 
-# export TERM="xterm-256color"
+export TERM="xterm-256color"
 
 
 
